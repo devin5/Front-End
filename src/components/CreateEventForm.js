@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axiosWithAuth from "../utilities/AxiosWithAuth";
 
 function CreateEventForm(props) {
   
@@ -19,13 +18,10 @@ function CreateEventForm(props) {
     e.preventDefault();
   };
 
-  axiosWithAuth()
-  .get()
-  .then(res =>
-    console.log(res))
-  .catch(err => console.log("Error", err));
+
 
   setInput({
+    title: "",
     guestNumber: "",
     date: "",
     budget: "",
@@ -35,6 +31,13 @@ function CreateEventForm(props) {
 
   return (
     <form onSubmit={submitForm}>
+      <Input 
+      type="text"
+      name="title"
+      onChange={handleChange}
+      placeholder="Your Party Name"
+      value={input.title}
+      />
       <Input 
       type="text"
       name="guestNumber"

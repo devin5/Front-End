@@ -1,11 +1,16 @@
-import React from "react";
+import React from 'react';
 
-function UserEvent() {
+const UserPage = props => {
   return (
-    <div className="userevent">
-      <h1>User Event</h1>
+    <div className="userpage">
+      <h1>{title}</h1>
+      Number of Guests: <h3>{props.guestNumber}</h3>
+      Date of your Party: <h3>{props.date}</h3>
+      Your Party budget: <h3>{props.budget}</h3>
+      The entertainment for your Party: <h3>{props.entertainment}</h3>
+      The items needed for your Party: <h3>props.{shoppingList}</h3>
     </div>
   );
 }
 
-export default UserEvent;
+export default UserPage;
