@@ -3,20 +3,20 @@ import axios from "axios";
 import UserEvent from "./UserEvent";
 
 function AllEventsPage() {
-
-  useEffect(() =>{
+  useEffect(() => {
     axios
-    .get()
-    .then()
-    .catch()
-  })
+      .get()
+      .then()
+      .catch();
+  });
 
   return (
-    <div className="userevent">
-      {X.map(index =>(
-        <UserEvent index={index}/>
-      ))}
-    </div>
+    // <div className="userevent">
+    //   {X.map(index => (
+    //     <UserEvent index={index} />
+    //   ))}
+    // </div>
+    <></>
   );
 }
 
