@@ -1,5 +1,11 @@
+html {
+  font-size: 62.5%;
+}
+
 .App {
   text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  background: #354356;
 }
 
 .App-logo {
@@ -23,4 +29,191 @@
 
 .banner {
   background-color: #09d3ac;
+}
+
+
+/* Banner Style  */
+.banner  nav {
+  display: flex;
+  justify-content: space-between;
+  background-color:#ECEBE7;
+  padding: 4% 2%;
+
+  }
+
+
+.banner nav  div{
+  font-size: 1.8rem;
+}
+
+nav a {
+  color: #354356;
+  font-family: 'Quicksand', sans-serif;;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+.links a {
+  margin: 0 20px 0;
+}
+
+.register {
+  margin-right: 125px;
+}
+
+.nav-bar a:hover {
+  background: rgba(144, 148, 156, 0.4);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-outline {
+  border: 1px solid #354356;
+  margin-left: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #90949C;
+  color: #ECEBE7;
+}
+
+/* End Banner Style */
+
+
+
+/* WElcome  */
+
+.welcome {
+  padding-left: 20px;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: url(./party.png) no-repeat;
+  transform: opacity;
+  background-size: cover;
+}
+
+.welcome .wel-h1 {
+  margin:70px 10px 70px 40px;
+  color:#ECEBE7;
+  font-size: 4rem;
+
+}
+
+
+
+.welcome .welcom-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 60px;
+
+}
+
+.welcom-links p {
+  color: #ECEBE7 ;
+  font-size: 2rem;
+}
+
+.welcome .welcom-links a {
+  text-decoration: none;
+  font-size: 3rem;
+  color: #90949c
+}
+
+.welcome .welcom-links a:hover {
+  text-decoration: none;
+}
+
+.content {
+  height: 65vh;
+  
+}
+
+/* Form Style  */
+
+.FormWrap h1 {
+  align-self: flex-start;
+  font-size: 3.5rem;
+  line-height: 2;
+  color: #90949c;
+
+}
+
+/*  Input Style */
+form input {
+  width: 100%;
+  font-size: 20px;
+  height: 40px;
+  border: none;
+  padding-left: 10px;
+  margin-bottom: 40px;
+  background: #ECEBE7;
+}
+
+form input:nth-child(4){
+  margin-bottom: 0px;
+}
+
+
+/* Label  */
+form label {
+  color: #ECEBE7;
+  width: 100%;
+  font-size: 25px;
+  margin-bottom: 10px;
+  justify-content: flex-start ;
+  text-align: start;
+}
+
+/*  Submit Form Button */
+form .submitbtn {
+  font-size: 18px;
+  width: 150px;
+  height: 40px;
+  color: #354356;
+  background: #90949c;
+  justify-self: flex-end;
+  text-align: center;
+  border: black 1px solid ;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+form .submitbtn:hover {
+  color: #ECEBE7;
+}
+ /*  Back Button Link */
+.backbtn {
+  align-self: flex-start;
+  height: 40px;
+  outline: none;
+  text-align: start;
+}
+
+/* Back Button  */
+.backbtn button {
+  font-size: 15px;
+  color: #90949c;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.backbtn button:hover {
+  color: #ECEBE7;
+
+}
+
+footer  {
+  padding: 4%;
+  background-color:#ECEBE7;
+}
+
+footer  p {
+  text-align: center;
+  font-size: 1.2rem;
 }
