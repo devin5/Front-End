@@ -12,11 +12,13 @@ function AllEventsPage() {
   })
 
   return (
-    <div className="userevent">
-      {X.map(index =>(
-        <UserEvent index={index}/>
-      ))}
-    </div>
+    // <div className="userevent">
+    //   {X.map(index =>(
+    //     <UserEvent index={index}/>
+    //   ))}
+    // </div>
+    <>
+    </>
   );
 }
 
