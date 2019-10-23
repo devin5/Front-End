@@ -27,8 +27,9 @@ export const registerUser = user => {
   return dispatch => {
     dispatch({ type: REGISTER_USER_START });
     axios
-      .post(registerEndPoint, user)
-      //   .post("https://jsonplaceholder.typicode.com/posts")
+      // dumby endpoint for development purposes
+      .post("https://jsonplaceholder.typicode.com/posts")
+      // .post(registerEndPoint, user)
       .then(res => {
         dispatch({ type: REGISTER_USER_SUCCESS, payload: res.data });
         history.push("/");
@@ -42,12 +43,14 @@ export const signIn = user => {
   return dispatch => {
     dispatch({ type: SIGN_USER_START });
     axios
-      .post(signEndPoint, user)
+      // .post(signEndPoint, user)
+      // dumby endpoint for development purposes
+      .post("https://jso")
 
       .then(res => {
         dispatch({ type: SIGN_USER_SUCCESS, payload: res.data });
-        localStorage.setItem("token", res.data.token);
-        history.push("/");
+        // localStorage.setItem("token", res.data.token);
+        history.push("/userpage");
       })
       .catch(error => dispatch({ type: SIGN_USER_FAILURE, payload: error }));
   };
