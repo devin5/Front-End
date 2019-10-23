@@ -5,15 +5,11 @@ html {
 .App {
   text-align: center;
   font-family: 'Quicksand', sans-serif;
-  background: #354356;
-}
-
-.App-logo {
-  height: 40vmin;
+  background: #354356;;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #354356;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -27,9 +23,6 @@ html {
   color: #09d3ac;
 }
 
-.banner {
-  background-color: #09d3ac;
-}
 
 
 /* Banner Style  */
@@ -37,7 +30,7 @@ html {
   display: flex;
   justify-content: space-between;
   background-color:#ECEBE7;
-  padding: 4% 2%;
+  padding: 3% 2%;
 
   }
 
@@ -83,69 +76,91 @@ nav a:hover {
 
 /* WElcome  */
 
+@keyframes mymove {
+ from {margin-left: -200px;}
+ to {margin-left: 80px;}
+}
+
+@keyframes opac {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 .welcome {
+  padding: 180px;
   padding-left: 20px;
-  height: 65vh;
+  /* min-height: 65vh; */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
   align-items: flex-start;
   background: url(./party.png) no-repeat;
-  transform: opacity;
   background-size: cover;
 }
 
-.welcome .wel-h1 {
-  margin:70px 10px 70px 40px;
+.welcome .welh1 {
+  margin:50px 10px 50px 80px;
   color:#ECEBE7;
-  font-size: 4rem;
+  font-size: 4.5rem;
+  animation: mymove 2.2s;
+  animation-fill-mode: forwards;
+  font-family: 'Handlee', cursive;
 
 }
 
 
 
-.welcome .welcom-links {
+.welcome .welcom-links { 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin-left: 60px;
+  margin-left: 100px;
+  font-family: 'Handlee', cursive;
 
 }
 
-.welcom-links p {
-  color: #ECEBE7 ;
-  font-size: 2rem;
+
+.welcome .welcom-links a:first-child {
+  opacity: 0;
+  animation: opac 2s 1.4s;
+  animation-fill-mode: forwards;
 }
 
+.welcome .welcom-links a:last-child {
+  opacity: 0;
+  animation: opac 2s 2s;
+  animation-fill-mode: forwards;
+
+}
 .welcome .welcom-links a {
   text-decoration: none;
   font-size: 3rem;
-  color: #90949c
+  color: #90949c;
+  margin-bottom: 40px;
 }
 
 .welcome .welcom-links a:hover {
   text-decoration: none;
 }
 
-.content {
-  height: 65vh;
-  
-}
+
 
 /* Form Style  */
 
 .FormWrap h1 {
-  align-self: flex-start;
+  /* align-self: flex-start; */
   font-size: 3.5rem;
   line-height: 2;
   color: #90949c;
+  font-family: 'Handlee', cursive;
+
 
 }
 
 /*  Input Style */
 form input {
-  width: 100%;
+  width: 40%;
   font-size: 20px;
   height: 40px;
   border: none;
@@ -154,15 +169,13 @@ form input {
   background: #ECEBE7;
 }
 
-form input:nth-child(4){
-  margin-bottom: 0px;
-}
+
 
 
 /* Label  */
 form label {
   color: #ECEBE7;
-  width: 100%;
+  width: 40%;
   font-size: 25px;
   margin-bottom: 10px;
   justify-content: flex-start ;
@@ -170,9 +183,9 @@ form label {
 }
 
 /*  Submit Form Button */
-form .submitbtn {
+form .submitbtn, .submitbtn {
   font-size: 18px;
-  width: 150px;
+  width: 200px;
   height: 40px;
   color: #354356;
   background: #90949c;
@@ -188,25 +201,34 @@ form .submitbtn:hover {
 }
  /*  Back Button Link */
 .backbtn {
-  align-self: flex-start;
+  align-self: center;
   height: 40px;
   outline: none;
   text-align: start;
+
 }
 
 /* Back Button  */
 .backbtn button {
-  font-size: 15px;
-  color: #90949c;
-  background: none;
-  border: none;
-  outline: none;
+  font-size: 18px;
+  width: 150px;
+  height: 40px;
+  color: #354356;
+  background: #90949c;
+  text-align: center;
+  border: black 1px solid ;
+  border-radius: 5px;
+  margin-top: 30px;
+
 }
 
 .backbtn button:hover {
   color: #ECEBE7;
 
 }
+
+
+/* Footer  */
 
 footer  {
   padding: 4%;
@@ -216,4 +238,66 @@ footer  {
 footer  p {
   text-align: center;
   font-size: 1.2rem;
+}
+
+
+
+
+/*  Card Event  */
+
+.userevent {
+  padding: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background: #6d7d8a;
+}
+
+.userpage:hover {
+  opacity: 1;
+}
+
+.userpage h1 {
+  width: 100%;
+  font-size: 4rem;
+  font-family: 'Handlee', cursive;
+
+}
+
+.userpage p {
+  font-size: 1.9rem;
+  width: 50%;
+}
+
+.userpage h3 {
+  font-size: 2.2rem;
+  width: 40%;
+  line-height: 0.7;
+}
+
+.btn {
+  width: 100px;
+  border: none;
+  outline: none;
+  background: none;
+  color: #90949c;
+}
+
+.btn:hover {
+  color: #ecebe7;
+}
+
+
+
+/* Home Page create Button and Show All Button */
+
+
+
+
+.userevent .myevents {
+  width:  100%;
+  font-size: 3rem;
+  font-family: 'Handlee', cursive;  
+  color: #222d3d;
+
 }

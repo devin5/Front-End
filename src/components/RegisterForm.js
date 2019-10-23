@@ -7,11 +7,10 @@ import styled from 'styled-components'
 
 //  Styled components
 export const FormWrapDiv = styled.div `
-    max-width: 600px;
-    margin: 50px auto;
+    padding: 150px;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
   
     `
@@ -19,8 +18,9 @@ export const FormWrapDiv = styled.div `
   export const RegForm = styled.form `
   
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    width:100%;
+    flex-direction: column;
+    justify-content: start;
     align-items: center;
   `
 
@@ -65,14 +65,14 @@ function RegisterForm(props) {
           placeholder="Enter Password"
           value={input.password}
         />
+      {props.error && <div>{props.error.message}</div>}
 
         <button className = "submitbtn">Register</button>
       </RegForm>
       <Link to="/" className = "backbtn" >
-        <button>return</button>
+        <button className = "return-btn">return</button>
       </Link>
 
-      {props.error && <div>{props.error.message}</div>}
     </FormWrapDiv>
   );
 }
