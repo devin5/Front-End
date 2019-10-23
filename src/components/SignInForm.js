@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { signIn } from "../actions";
 import { Link } from "react-router-dom";
+import { FormWrapDiv, RegForm} from './RegisterForm'
+
 
 function SignInForm(props) {
   const [input, setInput] = useState({});
@@ -19,10 +21,11 @@ function SignInForm(props) {
     });
   };
   return (
-    <>
-      Sign In Form
+    <FormWrapDiv className= "FormWrap" > 
+      <h1>Sign In</h1>
       {props.isLogging && <div>Loading</div>}
-      <form onSubmit={submitForm}>
+      <RegForm onSubmit={submitForm}>
+      <label>Username</label>
         <input
           type="text"
           name="username"
@@ -30,6 +33,7 @@ function SignInForm(props) {
           placeholder="Enter Username"
           value={input.username}
         />
+        <label>Password</label>
         <input
           type="password"
           name="password"
@@ -38,13 +42,13 @@ function SignInForm(props) {
           value={input.password}
         />
 
-        <button>Submit</button>
-      </form>
-      <Link to="/">
-        <button>Back</button>
+        <button className = "submitbtn">Sign In</button>
+      </RegForm>
+      <Link to="/" className = "backbtn">
+        <button>return</button>
       </Link>
       {props.error && <div>{props.error.message}</div>}
-    </>
+    </FormWrapDiv>
   );
 }
 

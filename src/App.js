@@ -4,7 +4,9 @@ import Welcome from "./components/Welcome";
 import RegisterForm from "./components/RegisterForm";
 import SignInForm from "./components/SignInForm";
 import Banner from "./components/Banner";
-import AllEventsPage from "./components/AllEventsPage";
+import UserPage from "./components/UserPage";
+import Footer from "./components/Footer";
+
 // css
 import "./App.css";
 // Routing
@@ -28,11 +30,15 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
 function App() {
   return (
     <div className="App">
-      <Banner />
-      <Route exact path="/" component={Welcome} />
-      <Route path="/register" component={RegisterForm} />
-      <Route path="/signin" component={SignInForm} />
-      {/* <Route path="/alleventspage" component={AllEventsPage} /> */}
+      {/* <Banner /> */}
+      <Route path="/" component={Banner} />
+      <div className="content">
+        <Route exact path="/" component={Welcome} />
+        <Route path="/register" component={RegisterForm} />
+        <Route path="/signin" component={SignInForm} />
+        <Route path="/userpage" component={UserPage} />
+      </div>
+      <Route path="/" component={Footer} />
     </div>
   );
 }
