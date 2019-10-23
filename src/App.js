@@ -6,11 +6,13 @@ import SignInForm from "./components/SignInForm";
 import Banner from "./components/Banner";
 import UserPage from "./components/UserPage";
 import Footer from "./components/Footer";
+import CreateEventForm from "./components/CreateEventForm";
 
 // css
 import "./App.css";
 // Routing
 import { Route, Redirect } from "react-router-dom";
+import AllEventsPage from "./components/AllEventsPage";
 // for Protected routing
 const ProtectedRoute = ({ component: Component, ...rest }) => {
   return (
@@ -36,7 +38,9 @@ function App() {
         <Route exact path="/" component={Welcome} />
         <Route path="/register" component={RegisterForm} />
         <Route path="/signin" component={SignInForm} />
-        <Route path="/userpage" component={UserPage} />
+        <ProtectedRoute path="/userpage" component={UserPage} />
+        <ProtectedRoute path="/createevent" component={CreateEventForm} />
+        <ProtectedRoute path="/allevents" component={AllEventsPage} />
       </div>
       <Route path="/" component={Footer} />
     </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import UserEvent from "./UserEvent";
 
-data = [
+const data = [
   {
     id: 0,
     guestNumber: "5",

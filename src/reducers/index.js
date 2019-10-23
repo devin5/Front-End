@@ -57,7 +57,7 @@ const reducer = (state = initialState, action) => {
     case SIGN_USER_SUCCESS:
       return {
         ...state,
-        user: action.payload,
+        // user: action.payload,
         isLoading: false,
         error: null
       };

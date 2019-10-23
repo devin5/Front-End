@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { signIn } from "../actions";
 import { Link } from "react-router-dom";
-import { FormWrapDiv, RegForm} from './RegisterForm'
-
+import { FormWrapDiv, RegForm } from "./RegisterForm";
 
 function SignInForm(props) {
   const [input, setInput] = useState({});
@@ -16,22 +15,22 @@ function SignInForm(props) {
     e.preventDefault();
     props.signIn(input);
     setInput({
-      username: "",
+      email: "",
       password: ""
     });
   };
   return (
-    <FormWrapDiv className= "FormWrap" > 
+    <FormWrapDiv className="FormWrap">
       <h1>Sign In</h1>
       {props.isLogging && <div>Loading</div>}
       <RegForm onSubmit={submitForm}>
-      <label>Username</label>
+        <label>Username</label>
         <input
           type="text"
-          name="username"
+          name="email"
           onChange={handleChanges}
-          placeholder="Enter Username"
-          value={input.username}
+          placeholder="Enter email"
+          value={input.email}
         />
         <label>Password</label>
         <input
@@ -42,9 +41,9 @@ function SignInForm(props) {
           value={input.password}
         />
 
-        <button className = "submitbtn">Sign In</button>
+        <button className="submitbtn">Sign In</button>
       </RegForm>
-      <Link to="/" className = "backbtn">
+      <Link to="/" className="backbtn">
         <button>return</button>
       </Link>
       {props.error && <div>{props.error.message}</div>}

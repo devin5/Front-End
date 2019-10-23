@@ -2,30 +2,26 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { registerUser } from "../actions";
 import { Link } from "react-router-dom";
-import styled from 'styled-components'
-
+import styled from "styled-components";
 
 //  Styled components
-export const FormWrapDiv = styled.div `
-    max-width: 600px;
-    margin: 50px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-  
-    `
+export const FormWrapDiv = styled.div`
+  max-width: 600px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+`;
 
-  export const RegForm = styled.form `
-  
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  `
+export const RegForm = styled.form`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+`;
 
 //  End Styled Component
-
 
 function RegisterForm(props) {
   const [input, setInput] = useState({});
@@ -38,23 +34,23 @@ function RegisterForm(props) {
     e.preventDefault();
     props.registerUser(input);
     setInput({
-      username: "",
+      email: "",
       password: ""
     });
   };
   return (
-    <FormWrapDiv className = "FormWrap">
-      <h1>Register  </h1>
+    <FormWrapDiv className="FormWrap">
+      <h1>Register </h1>
       {props.isLogging && <div>Loading</div>}
 
       <RegForm onSubmit={submitForm}>
-      <label>Username</label>
+        <label>Username</label>
         <input
           type="text"
-          name="username"
+          name="email"
           onChange={handleChanges}
-          placeholder="Enter Username"
-          value={input.username}
+          placeholder="Enter name"
+          value={input.email}
         />
 
         <label>Password</label>
@@ -66,9 +62,9 @@ function RegisterForm(props) {
           value={input.password}
         />
 
-        <button className = "submitbtn">Register</button>
+        <button className="submitbtn">Register</button>
       </RegForm>
-      <Link to="/" className = "backbtn" >
+      <Link to="/" className="backbtn">
         <button>return</button>
       </Link>
 
