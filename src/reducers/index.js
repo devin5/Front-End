@@ -18,12 +18,68 @@ import {
 } from "../actions";
 
 const initialState = {
-  user: {
-    username: "",
-    id: "",
-    userevents: []
-  },
-  allevents: [],
+  events: [
+    {
+      by: 9,
+      id: 0,
+      guestNumber: "5",
+      date: "4",
+      budget: "6787",
+      entertainment: "jay-z, kanya west",
+      shoppingList: "toiletress, spongebob, oswaldo",
+      title: "devins party"
+    },
+    {
+      by: 9,
+      id: 1,
+      guestNumber: "5",
+      date: "4",
+      budget: "6787",
+      entertainment: "jay-z, kanya west",
+      shoppingList: "toiletress, spongebob, oswaldo",
+      title: "devins party"
+    },
+    {
+      by: 9,
+      id: 2,
+      guestNumber: "5",
+      date: "4",
+      budget: "6787",
+      entertainment: "jay-z, kanya west",
+      shoppingList: "toiletress, spongebob, oswaldo",
+      title: "devins party"
+    },
+    {
+      by: 9,
+      id: 3,
+      guestNumber: "5",
+      date: "4",
+      budget: "6787",
+      entertainment: "jay-z, kanya west",
+      shoppingList: "toiletress, spongebob, oswaldo",
+      title: "devins party"
+    },
+    {
+      by: 9,
+      id: 4,
+      guestNumber: "5",
+      date: "4",
+      budget: "6787",
+      entertainment: "jay-z, kanya west",
+      shoppingList: "toiletress, spongebob, oswaldo",
+      title: "devins party"
+    },
+    {
+      by: 9,
+      id: 5,
+      guestNumber: "5",
+      date: "4",
+      budget: "6787",
+      entertainment: "jay-z, kanya west",
+      shoppingList: "toiletress, spongebob, oswaldo",
+      title: "devins party"
+    }
+  ],
   isLoading: false,
   error: null
 };
@@ -67,44 +123,44 @@ const reducer = (state = initialState, action) => {
         error: action.payload,
         isLoading: false
       };
-    case GET_USER_EVENTS_START:
-      return {
-        ...state,
-        error: null,
-        isLoading: true
-      };
-    case GET_USER_EVENTS_SUCCESS:
-      return {
-        ...state,
-        user: { ...state.user, userevents: action.payload },
-        isLoading: false,
-        error: null
-      };
-    case GET_USER_EVENTS_FAILURE:
-      return {
-        ...state,
-        error: action.payload,
-        isLoading: false
-      };
-    case GET_ALL_EVENTS_START:
-      return {
-        ...state,
-        error: null,
-        isLoading: true
-      };
-    case GET_ALL_EVENTS_SUCCESS:
-      return {
-        ...state,
-        allevents: action.payload,
-        isLoading: false,
-        error: null
-      };
-    case GET_ALL_EVENTS_FAILURE:
-      return {
-        ...state,
-        error: action.payload,
-        isLoading: false
-      };
+    // case GET_USER_EVENTS_START:
+    //   return {
+    //     ...state,
+    //     error: null,
+    //     isLoading: true
+    //   };
+    // case GET_USER_EVENTS_SUCCESS:
+    //   return {
+    //     ...state,
+    //     user: { ...state.user, userevents: action.payload },
+    //     isLoading: false,
+    //     error: null
+    //   };
+    // case GET_USER_EVENTS_FAILURE:
+    //   return {
+    //     ...state,
+    //     error: action.payload,
+    //     isLoading: false
+    //   };
+    // case GET_ALL_EVENTS_START:
+    //   return {
+    //     ...state,
+    //     error: null,
+    //     isLoading: true
+    //   };
+    // case GET_ALL_EVENTS_SUCCESS:
+    //   return {
+    //     ...state,
+    //     allevents: action.payload,
+    //     isLoading: false,
+    //     error: null
+    //   };
+    // case GET_ALL_EVENTS_FAILURE:
+    //   return {
+    //     ...state,
+    //     error: action.payload,
+    //     isLoading: false
+    //   };
     default:
       return state;
   }

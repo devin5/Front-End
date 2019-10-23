@@ -3,10 +3,12 @@ import history from "../history";
 import { axiosWithAuth } from "../utilities/AxiosWithAuth";
 
 const registerEndPoint =
-  "https://party-planner-ls.herokuapp.com/api/auth/register";
-const signEndPoint = "https://party-planner-ls.herokuapp.com/api/auth/login";
+  "https://party-planner-lambda.herokuapp.com/api/auth/register";
+const signEndPoint =
+  "https://party-planner-lambda.herokuapp.com/api/auth/login";
 const getUserEventsEndPoint = "";
 const getAllEventsEndPoint = "";
+const CreateEventEndPoint = "";
 
 export const REGISTER_USER_START = "REGISTER_USER_START";
 export const REGISTER_USER_SUCCESS = "REGISTER_USER_SUCCESS";
@@ -53,7 +55,7 @@ export const signIn = user => {
         dispatch({ type: SIGN_USER_SUCCESS, payload: res.data });
         console.log("im res from sign in", res);
         localStorage.setItem("token", res.data.token);
-        history.push("/userpage");
+        history.push(`/userpage${res.data.id}`);
       })
       .catch(error => dispatch({ type: SIGN_USER_FAILURE, payload: error }));
   };
@@ -84,3 +86,15 @@ export const getALLEvents = () => {
       );
   };
 };
+
+// export const CreateEvent = () => {
+//   return dispatch => {
+//     dispatch({ type: CREATE_EVENT_START });
+//     axios
+//       .get(getAllEventsEndPoint)
+//       .then(res => {
+//         dispatch({ type: CREATE_EVENT_SUCCESS, payload: res.data });
+//       })
+//       .catch(error => dispatch({ type: CREATE_EVENT_FAILURE, payload: error }));
+//   };
+// };

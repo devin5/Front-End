@@ -15,7 +15,7 @@ function SignInForm(props) {
     e.preventDefault();
     props.signIn(input);
     setInput({
-      email: "",
+      username: "",
       password: ""
     });
   };
@@ -27,10 +27,10 @@ function SignInForm(props) {
         <label>Username</label>
         <input
           type="text"
-          name="email"
+          name="username"
           onChange={handleChanges}
-          placeholder="Enter email"
-          value={input.email}
+          placeholder="Enter username"
+          value={input.username}
         />
         <label>Password</label>
         <input
@@ -53,7 +53,7 @@ function SignInForm(props) {
 
 const mapStateToProps = state => {
   return {
-    user: state.user,
+    // user: state.user,
     isLoading: state.isLoading,
     error: state.error
   };

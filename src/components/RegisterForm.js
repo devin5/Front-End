@@ -34,7 +34,7 @@ function RegisterForm(props) {
     e.preventDefault();
     props.registerUser(input);
     setInput({
-      email: "",
+      username: "",
       password: ""
     });
   };
@@ -47,10 +47,10 @@ function RegisterForm(props) {
         <label>Username</label>
         <input
           type="text"
-          name="email"
+          name="username"
           onChange={handleChanges}
-          placeholder="Enter name"
-          value={input.email}
+          placeholder="Enter username"
+          value={input.username}
         />
 
         <label>Password</label>

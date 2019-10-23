@@ -1,63 +1,9 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
+import { connect } from "react-redux";
 import UserEvent from "./UserEvent";
-const data = [
-  {
-    id: 0,
-    guestNumber: "5",
-    date: "4",
-    budget: "6787",
-    entertainment: "jay-z, kanya west",
-    shoppingList: "toiletress, spongebob, oswaldo",
-    title: "devins party"
-  },
-  {
-    id: 1,
-    guestNumber: "5",
-    date: "4",
-    budget: "6787",
-    entertainment: "jay-z, kanya west",
-    shoppingList: "toiletress, spongebob, oswaldo",
-    title: "devins party"
-  },
-  {
-    id: 2,
-    guestNumber: "5",
-    date: "4",
-    budget: "6787",
-    entertainment: "jay-z, kanya west",
-    shoppingList: "toiletress, spongebob, oswaldo",
-    title: "devins party"
-  },
-  {
-    id: 3,
-    guestNumber: "5",
-    date: "4",
-    budget: "6787",
-    entertainment: "jay-z, kanya west",
-    shoppingList: "toiletress, spongebob, oswaldo",
-    title: "devins party"
-  },
-  {
-    id: 4,
-    guestNumber: "5",
-    date: "4",
-    budget: "6787",
-    entertainment: "jay-z, kanya west",
-    shoppingList: "toiletress, spongebob, oswaldo",
-    title: "devins party"
-  },
-  {
-    id: 5,
-    guestNumber: "5",
-    date: "4",
-    budget: "6787",
-    entertainment: "jay-z, kanya west",
-    shoppingList: "toiletress, spongebob, oswaldo",
-    title: "devins party"
-  }
-];
-function UserPage() {
+
+function UserPage(props) {
   // useEffect(() =>{
   //   axios
   //   .get()
@@ -67,11 +13,22 @@ function UserPage() {
 
   return (
     <div className="userevent">
-      {data.map(index => (
+      {props.events.map(index => (
         <UserEvent index={index} />
       ))}
     </div>
   );
 }
 
-export default UserPage;
+const mapStateToProps = state => {
+  return {
+    // user: state.user,
+    events: state.events,
+    isLoading: state.isLoading,
+    error: state.error
+  };
+};
+export default connect(
+  mapStateToProps,
+  null
+)(UserPage);
