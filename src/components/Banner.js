@@ -7,9 +7,7 @@ function Banner(props) {
   return (
     <div className="banner">
       <nav>
-        <div>
-          <img src ={Logo} alt="" width = "300px" height = "50px"/>
-        </div >
+          <img className = "logo" src ={Logo} alt="" width = "300px" height = "50px"/>
         <div className = "links">
           {localStorage.getItem("token") ? <Link to = "" >All Events</Link> : null }
           {localStorage.getItem("token") ? <Link to = "" >My Events</Link> : null }

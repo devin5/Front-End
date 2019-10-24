@@ -29,6 +29,7 @@ html {
 .banner  nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color:#ECEBE7;
   padding: 3% 2%;
 
