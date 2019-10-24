@@ -28,11 +28,13 @@ const UserPage = props => {
   return (
     <CardDiv className="userpage">
       <h1>{props.index.title}</h1>
-      Number of Guests: <h3>{props.index.guestNumber}</h3>
-      Date of your Party: <h3>{props.index.date}</h3>
-      Your Party budget: <h3>{props.index.budget}</h3>
-      The entertainment for your Party: <h3>{props.index.entertainment}</h3>
-      The items needed for your Party: <h3>{props.index.shoppingList}</h3>
+      <p>Number of Guests:</p> <h3>{props.index.guestNumber}</h3>
+      <p>Date of your Party: </p><h3>{props.index.date}</h3>
+      <p>Your Party budget:</p> <h3>{props.index.budget}</h3>
+      <p>The entertainment for your Party:</p> <h3>{props.index.entertainment}</h3>
+      <p>The items needed for your Party: </p><h3>{props.index.shoppingList}</h3>
+      <button className = "submitbtn btn">Edite</button>
+      <button className = "submitbtn btn">Delete</button>   
     </CardDiv>
   );
 };
