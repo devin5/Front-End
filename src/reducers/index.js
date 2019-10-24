@@ -14,20 +14,21 @@ import {
   // get all event cards
   GET_ALL_EVENTS_START,
   GET_ALL_EVENTS_SUCCESS,
-  GET_ALL_EVENTS_FAILURE
+  GET_ALL_EVENTS_FAILURE,
+  CREATE_EVENT
 } from "../actions";
 
 const initialState = {
   events: [
     {
-      by: 9,
+      by: 8,
       id: 0,
-      guestNumber: "5",
+      guestNumber: "9",
       date: "4",
       budget: "6787",
       entertainment: "jay-z, kanya west",
       shoppingList: "toiletress, spongebob, oswaldo",
-      title: "devins party"
+      title: "devins disapeqar party"
     },
     {
       by: 9,
@@ -121,6 +122,13 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         error: action.payload,
+        isLoading: false
+      };
+    case CREATE_EVENT:
+      return {
+        ...state,
+        events: [...state.events, action.payload],
+        error: null,
         isLoading: false
       };
     // case GET_USER_EVENTS_START:

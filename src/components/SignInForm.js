@@ -40,13 +40,13 @@ function SignInForm(props) {
           placeholder="Enter Password"
           value={input.password}
         />
+              {props.error && <div>{props.error.message}</div>}
 
         <button className="submitbtn">Sign In</button>
       </RegForm>
       <Link to="/" className="backbtn">
         <button>return</button>
       </Link>
-      {props.error && <div>{props.error.message}</div>}
     </FormWrapDiv>
   );
 }

@@ -26,6 +26,8 @@ export const GET_ALL_EVENTS_START = "GET_ALL_EVENTS_START";
 export const GET_ALL_EVENTS_SUCCESS = "GET_ALL_EVENTS_SUCCESS";
 export const GET_ALL_EVENTS_FAILURE = "GET_ALL_EVENTS_FAILURE";
 
+export const CREATE_EVENT = "CREATE_EVENT";
+
 export const registerUser = user => {
   return dispatch => {
     dispatch({ type: REGISTER_USER_START });
@@ -55,6 +57,7 @@ export const signIn = user => {
         dispatch({ type: SIGN_USER_SUCCESS, payload: res.data });
         console.log("im res from sign in", res);
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("id", res.data.id);
         history.push(`/userpage${res.data.id}`);
       })
       .catch(error => dispatch({ type: SIGN_USER_FAILURE, payload: error }));
@@ -87,14 +90,9 @@ export const getALLEvents = () => {
   };
 };
 
-// export const CreateEvent = () => {
-//   return dispatch => {
-//     dispatch({ type: CREATE_EVENT_START });
-//     axios
-//       .get(getAllEventsEndPoint)
-//       .then(res => {
-//         dispatch({ type: CREATE_EVENT_SUCCESS, payload: res.data });
-//       })
-//       .catch(error => dispatch({ type: CREATE_EVENT_FAILURE, payload: error }));
-//   };
-// };
+export const CreateEvent = event => {
+  return dispatch => {
+    dispatch({ type: CREATE_EVENT, payload: event });
+    console.log("event", event);
+  };
+};
