@@ -20,6 +20,7 @@ function UserPage(props) {
       </Link>
 
       {props.events.map(index => {
+        console.log("index: ", index);
         if (index.by.toString() === localStorage.getItem("id")) {
           console.log("im in if", index);
           return <UserEvent index={index} />;

@@ -16,7 +16,8 @@ import {
   GET_ALL_EVENTS_SUCCESS,
   GET_ALL_EVENTS_FAILURE,
   CREATE_EVENT,
-  DELETE_EVENT
+  DELETE_EVENT,
+  EDIT_EVENT
 } from "../actions";
 
 const initialState = {
@@ -24,22 +25,22 @@ const initialState = {
     {
       by: 8,
       id: 0,
-      guestNumber: "9",
-      date: "4",
-      budget: "6787",
-      entertainment: "jay-z, kanya west",
-      shoppingList: "toiletress, spongebob, oswaldo",
-      title: "devins disapeqar party"
+      guestNumber: "11",
+      date: "11",
+      budget: "12",
+      entertainment: "jtest",
+      shoppingList: "test2",
+      title: "party"
     },
     {
       by: 9,
       id: 1,
-      guestNumber: "5",
-      date: "4",
-      budget: "6787",
-      entertainment: "jay-z, kanya west",
-      shoppingList: "toiletress, spongebob, oswaldo",
-      title: "devins party"
+      guestNumber: "52",
+      date: "42",
+      budget: "6",
+      entertainment: "test1",
+      shoppingList: "test2",
+      title: "arty"
     },
     {
       by: 9,
@@ -87,6 +88,8 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
+  console.log("I am in reducer().");
+  console.log("action.type: " + action.type);
   switch (action.type) {
     case REGISTER_USER_START:
       return {
@@ -140,7 +143,28 @@ const reducer = (state = initialState, action) => {
 
       return {
         ...state,
-        events: [newArr],
+        events: newArr,
+        error: null,
+        isLoading: false
+      };
+    case EDIT_EVENT:
+      console.log("I am in EDIT_EVENT");
+      for (let i = 0; i < state.events.length; i++) {
+        if (state.events[i].id === action.payload.id) {
+          // state.events[i] = action.payload;
+          state.events[i].budget = action.payload.budget;
+          state.events[i].date = action.payload.date;
+          state.events[i].entertainment = action.payload.entertainment;
+          state.events[i].guestNumber = action.payload.guestNumber;
+          state.events[i].shoppingList = action.payload.shoppingList;
+          state.events[i].title = action.payload.title;
+        } else {
+        }
+      }
+
+      return {
+        ...state,
+        events: state.events,
         error: null,
         isLoading: false
       };
