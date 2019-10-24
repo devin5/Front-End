@@ -4,7 +4,7 @@ import { deleteItem, editItem } from "../actions";
 import { connect } from "react-redux";
 import { numberTypeAnnotation } from "@babel/types";
 
-const CardDiv = Styled.div`
+const CardDiv = Styled.div `
   width:  25%;
   display: flex;
   flex-wrap: wrap;
@@ -15,7 +15,7 @@ const CardDiv = Styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   background: #354356;
-  align-items: center;
+  align-items: start;
   opacity: 0.8;
   transition: opacity 0.5s;
   transition: scale();
@@ -23,7 +23,7 @@ const CardDiv = Styled.div`
   color: #90949c;
   line-height: 1;
   box-shadow: black 5px 5px 20px;
-  `;
+  `
 
 const UserEvent = props => {
   const [editing, setEditing] = useState(false);

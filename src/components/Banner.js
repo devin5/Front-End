@@ -28,7 +28,7 @@ function Banner(props) {
         </div>
         <div className="register">
           {localStorage.getItem("token") ? (
-            <button onClick={clickPush}>Log Out</button>
+            <button className = "logout" onClick={clickPush}>Log Out</button>
           ) : null}
         </div>
       </nav>

@@ -42,7 +42,8 @@ html {
 
 nav a {
   color: #354356;
-  font-family: 'Quicksand', sans-serif;;
+  font-family: 'Quicksand', sans-serif;
+  text-decoration: none;
 }
 
 nav a:hover {
@@ -52,8 +53,13 @@ nav a:hover {
   margin: 0 20px 0;
 }
 
-.register {
-  margin-right: 125px;
+.banner .register  .logout{
+  color: rgba(255, 6, 6, 1);
+  font-family: 'Quicksand', sans-serif;
+  text-decoration: none;
+  border: none;
+  font-size: 1.8rem ;
+  background: none;
 }
 
 .nav-bar a:hover {
@@ -144,6 +150,39 @@ nav a:hover {
 .welcome .welcom-links a:hover {
   text-decoration: none;
 }
+
+
+/* user page  */
+
+.userevent .myevents {
+  width:  100%;
+  font-size: 3rem;
+  font-family: 'Handlee', cursive;  
+  color: #222d3d;
+
+}
+
+.userPage {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.createlink {
+  font-size: 3rem;
+  height: 30px;
+  color: #222d3d;
+  text-decoration: none;
+  margin-bottom: 30px;
+  margin: 0 auto;
+
+}
+
+.createlink:hover {
+  color: #ECEBE7;
+}
+
+
 
 
 
@@ -290,15 +329,5 @@ footer  p {
 
 
 
-/* Home Page create Button and Show All Button */
 
 
-
-
-.userevent .myevents {
-  width:  100%;
-  font-size: 3rem;
-  font-family: 'Handlee', cursive;  
-  color: #222d3d;
-
-}
