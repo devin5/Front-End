@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { signIn } from "../actions";
 import { Link } from "react-router-dom";
+import { FormWrapDiv, RegForm } from "./RegisterForm";
 
 function SignInForm(props) {
   const [input, setInput] = useState({});
@@ -19,17 +20,19 @@ function SignInForm(props) {
     });
   };
   return (
-    <>
-      Sign In Form
+    <FormWrapDiv className="FormWrap">
+      <h1>Sign In</h1>
       {props.isLogging && <div>Loading</div>}
-      <form onSubmit={submitForm}>
+      <RegForm onSubmit={submitForm}>
+        <label>Username</label>
         <input
           type="text"
           name="username"
           onChange={handleChanges}
-          placeholder="Enter Username"
+          placeholder="Enter username"
           value={input.username}
         />
+        <label>Password</label>
         <input
           type="password"
           name="password"
@@ -37,20 +40,20 @@ function SignInForm(props) {
           placeholder="Enter Password"
           value={input.password}
         />
+              {props.error && <div>{props.error.message}</div>}
 
-        <button>Submit</button>
-      </form>
-      <Link to="/">
-        <button>Back</button>
+        <button className="submitbtn">Sign In</button>
+      </RegForm>
+      <Link to="/" className="backbtn">
+        <button>return</button>
       </Link>
-      {props.error && <div>{props.error.message}</div>}
-    </>
+    </FormWrapDiv>
   );
 }
 
 const mapStateToProps = state => {
   return {
-    user: state.user,
+    // user: state.user,
     isLoading: state.isLoading,
     error: state.error
   };

@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import UserEvent from "./UserEvent";
+import { connect } from "react-redux";
 
-function AllEventsPage() {
+function AllEventsPage(props) {
+  //   useEffect(() => props{
+  //     axios
+  //       .get()
+  //       .then()
+  //       .catch();
+  //   });
+
   return (
-    <div className="alleventspage">
-      <h1>All Events Page</h1>
+    <div className="userevent">
+      {props.events.map(index => (
+        <UserEvent index={index} />
+      ))}
     </div>
   );
 }
 
-export default AllEventsPage;
+const mapStateToProps = state => {
+  return {
+    // user: state.user,
+    events: state.events,
+    isLoading: state.isLoading,
+    error: state.error
+  };
+};
+export default connect(
+  mapStateToProps,
+  null
+)(AllEventsPage);
