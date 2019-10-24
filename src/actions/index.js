@@ -27,6 +27,7 @@ export const GET_ALL_EVENTS_SUCCESS = "GET_ALL_EVENTS_SUCCESS";
 export const GET_ALL_EVENTS_FAILURE = "GET_ALL_EVENTS_FAILURE";
 
 export const CREATE_EVENT = "CREATE_EVENT";
+export const DELETE_EVENT = "DELETE_EVENT";
 
 export const registerUser = user => {
   return dispatch => {
@@ -94,5 +95,14 @@ export const CreateEvent = event => {
   return dispatch => {
     dispatch({ type: CREATE_EVENT, payload: event });
     console.log("event", event);
+  };
+};
+export const deleteItem = id => {
+  console.log("dispatch", id);
+
+  return dispatch => {
+    console.log("dispatch here", id);
+    dispatch({ type: DELETE_EVENT, payload: id });
+    console.log("delete", id);
   };
 };

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // import axios from "axios";
 import { connect } from "react-redux";
+
 import UserEvent from "./UserEvent";
 
 function UserPage(props) {
@@ -40,5 +41,6 @@ const mapStateToProps = state => {
 };
 export default connect(
   mapStateToProps,
+
   null
 )(UserPage);

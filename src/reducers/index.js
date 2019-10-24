@@ -15,7 +15,8 @@ import {
   GET_ALL_EVENTS_START,
   GET_ALL_EVENTS_SUCCESS,
   GET_ALL_EVENTS_FAILURE,
-  CREATE_EVENT
+  CREATE_EVENT,
+  DELETE_EVENT
 } from "../actions";
 
 const initialState = {
@@ -128,6 +129,18 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         events: [...state.events, action.payload],
+        error: null,
+        isLoading: false
+      };
+    case DELETE_EVENT:
+      console.log("case delete event");
+      const newArr = state.events.filter(item => {
+        return item.id !== action.payload;
+      });
+
+      return {
+        ...state,
+        events: [newArr],
         error: null,
         isLoading: false
       };
