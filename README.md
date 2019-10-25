@@ -23,4 +23,4 @@ Target Audience
 Our target audience is for anyone at any age who wants/needs to become more organized.
 
 Planning Documentation
-To see how we planned out this app, please visit our planning docs page.
+To see how we planned out this app, please 
