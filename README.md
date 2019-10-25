@@ -1,12 +1,26 @@
-# Front-End
+Image of Wunderlist
+Frontend
+repo for React Devs
 
-Welcome to Our Party Planner App that allows you to create an update paerty events to your profile as well as browse other parties created by other users !
+What is Wunderlist?
+Wunderlist is an easy to use todo app where you can create, edit and delete your tasks as needed.
 
-**_FOR DEV TEAM PUT ALL COMMENTS, QUESTIONS, IDEAS BELOW(COMMENTED OUT) _**
+Features
+You can add, edit, update and delete the tasks/items you created.
 
-<!-- DEVIN
-city instead of address?
-should we include  phone number in sign up ?
-BANNER?
-update form being seperated from create form?
-Give Me Back An array of user events after signin register-->
+FrameWork
+We are currently using:
+
+React Create App
+Redux
+Node
+Axios
+Formik
+Yup
+Styled Components
+Knex
+Target Audience
+Our target audience is for anyone at any age who wants/needs to become more organized.
+
+Planning Documentation
+To see how we planned out this app, please visit our planning docs page.
