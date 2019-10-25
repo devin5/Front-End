@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import UserEvent from "./UserEvent";
+import AllEvent from "./AllEvent";
 import { connect } from "react-redux";
 
 function AllEventsPage(props) {
@@ -14,7 +14,7 @@ function AllEventsPage(props) {
   return (
     <div className="userevent">
       {props.events.map(index => (
-        <UserEvent index={index} />
+        <AllEvent index={index} />
       ))}
     </div>
   );
